@@ -72,9 +72,7 @@
                             }
                           }],
     "react/wrap-multilines": 2,
-    "babel/block-scoped-var": 1,
     "babel/object-shorthand": 1,
-    "babel/generator-star": 1,
     "babel/generator-star-spacing": 1
   },
   "env": {

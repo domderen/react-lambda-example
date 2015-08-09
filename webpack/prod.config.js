@@ -95,8 +95,8 @@ module.exports = {
     // http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-          warnings: false,
-        },
+        warnings: false,
+      },
     }),
 
     // A webpack plugin to write webpack stats that can be consumed when rendering

@@ -1,0 +1,33 @@
+{
+  "name": "react-lambda-example",
+  "version": "0.1.0",
+  "description": "React isomorphic application hosted on Amazon Lambda and served through Amazon API Gateway.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domderen/react-lambda-example.git"
+  },
+  "keywords": [
+    "react",
+    "Amazon",
+    "Lambda",
+    "API",
+    "Gateway",
+    "isomorphic",
+    "universal",
+    "server",
+    "side",
+    "rendering",
+    "render",
+    "string"
+  ],
+  "author": "Dominik Deren (@domderen)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/domderen/react-lambda-example/issues"
+  },
+  "homepage": "https://github.com/domderen/react-lambda-example#readme"
+}

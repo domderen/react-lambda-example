@@ -43,11 +43,11 @@ All application sources are linted using [Eslint](http://eslint.org/) which is c
 
 ## Continuous deployment
 
-This project is configured to use [CircleCI](https://circleci.com/) build system on all branches. Configuration of the continuous deployment is defined in the `circle.yml` file. It will run unit tests on each commit to the repository, and on merge to the *master* branch, it will performed deployment of the application to staging environment comprised of the following steps:
+This project is configured to use [CircleCI](https://circleci.com/) build system on all branches. Configuration of the continuous deployment is defined in the `circle.yml` file. It will run unit tests on each commit to the repository, and on merge to the *master* branch, it will perform deployment of the application to staging environment comprised of the following steps:
 - Build deployment package using webpack production configuration,
-- Deploy prepared package to Amazon S3 into the application directory, with files stored in the directory named after the current build number. This allows to keep the application versioned, and have builds immutable,
+- Deploy prepared package to Amazon S3 as a .ZIP archive named after the build number. This allows to keep the application versioned, and have builds immutable,
 - Tag current version of the code in the repository, with the current build number,
-- Update the [Ops-Frontend](https://github.com/import-io/ops-frontend/blob/master/conf/env/staging.sed) staging configuration file, to inform our nginx configuration about new staging build.
+- Trigger a code update inside Amazon Lambda to actually deploy new version of the code, to staging environment.
 
 # Running the application
 

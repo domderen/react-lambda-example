@@ -1,0 +1,27 @@
+---
+  machine:
+    node:
+      version: "iojs-v3.0.0"
+    environment:
+      BUCKET_NAME: react-lambda-example/versions
+      AWS_REGION: us-east-1
+  test:
+    override:
+      -
+        npm run test-circle
+      -
+        npm run release
+  deployment:
+    staging:
+      branch: master
+      commands:
+        -
+          npm run zip
+        -
+          npm run deploy
+        -
+          git config --global user.email 'circleci@import.io'
+        -
+          git config --global user.name 'Circle CI'
+        -
+          ./tag.sh

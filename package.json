@@ -29,5 +29,59 @@
   "bugs": {
     "url": "https://github.com/domderen/react-lambda-example/issues"
   },
-  "homepage": "https://github.com/domderen/react-lambda-example#readme"
+  "homepage": "https://github.com/domderen/react-lambda-example#readme",
+  "dependencies": {
+    "babel": "^5.8.21",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "babel-core": "^5.8.21",
+    "babel-eslint": "^4.0.5",
+    "babel-loader": "^5.3.2",
+    "chai": "^3.2.0",
+    "compression": "^1.5.2",
+    "css-loader": "^0.15.6",
+    "denodeify": "^1.2.1",
+    "eslint": "^1.1.0",
+    "eslint-plugin-babel": "^2.0.0",
+    "eslint-plugin-react": "^3.2.1",
+    "express": "^4.13.3",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "isparta": "^3.0.3",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^2.2.5",
+    "mocha-junit-reporter": "^1.6.1",
+    "node-libs-browser": "^0.5.2",
+    "nodemon": "^1.4.0",
+    "opn": "^3.0.2",
+    "postcss-loader": "^0.5.1",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^1.2.8",
+    "s3-deploy": "^0.1.7",
+    "serve": "^1.4.0",
+    "serve-favicon": "^2.3.0",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0",
+    "strip-loader": "^0.1.0",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "test": "npm run lint && mocha",
+    "start": "npm run lint && ./script/start.sh",
+    "release": "npm test && ./script/build-prod.sh",
+    "serve": "./node_modules/.bin/serve -p 9000 dist",
+    "coverage": "babel-node node_modules/.bin/isparta cover --report html node_modules/.bin/_mocha",
+    "zip": "cd dist && zip -r ../$CIRCLE_BUILD_NUM.zip *",
+    "deploy": "s3-deploy './*.zip' --cwd './' --region $AWS_REGION --bucket $BUCKET_NAME",
+    "test-circle": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/file.xml mocha test --reporter mocha-junit-reporter"
+  }
 }

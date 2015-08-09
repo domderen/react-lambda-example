@@ -1,0 +1,116 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "indent": [
+        2,
+        2
+    ],
+    "quotes": [
+        2,
+        "single"
+    ],
+    "linebreak-style": [
+        2,
+        "unix"
+    ],
+    "semi": [
+        2,
+        "always"
+    ],
+    "accessor-pairs": [2, {getWithoutSet: false}],
+    "no-underscore-dangle": 0,
+    "no-console": 0,
+    "new-cap": 0,
+    "comma-dangle": [2, "always-multiline"],
+    "no-var": 2,
+    "constructor-super": 2,
+    "generator-star-spacing": [2, "before"],
+    "no-this-before-super": 2,
+    "object-shorthand": [2, "always"],
+    "prefer-const": 2,
+    "react/jsx-boolean-value": 2,
+    "react/jsx-no-duplicate-props": [2, { "ignoreCase": false }],
+    "react/jsx-no-undef": 2,
+    "react/jsx-quotes": [1, "double", "avoid-escape"],
+    "react/jsx-sort-prop-types": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/no-did-mount-set-state": 2,
+    "react/no-did-update-set-state": 2,
+    "react/no-multi-comp": 2,
+    "react/no-unknown-property": 2,
+    "react/prop-types": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/require-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/self-closing-comp": 2,
+    "react/sort-comp": [2, {
+                            "order": [
+                              "lifecycle",
+                              "everything-else",
+                              "render"
+                            ],
+                            "groups": {
+                              "lifecycle": [
+                                "displayName",
+                                "propTypes",
+                                "contextTypes",
+                                "childContextTypes",
+                                "defaultProps",
+                                "state",
+                                "constructor",
+                                "getChildContext",
+                                "componentWillMount",
+                                "componentDidMount",
+                                "componentWillReceiveProps",
+                                "shouldComponentUpdate",
+                                "componentWillUpdate",
+                                "componentDidUpdate",
+                                "componentWillUnmount"
+                              ]
+                            }
+                          }],
+    "react/wrap-multilines": 2,
+    "babel/block-scoped-var": 1,
+    "babel/object-shorthand": 1,
+    "babel/generator-star": 1,
+    "babel/generator-star-spacing": 1
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "generators": true,
+    "arrowFunctions": true,
+    "blockBindings": true,
+    "classes": true,
+    "defaultParams": true,
+    "destructuring": true,
+    "modules": true,
+    "objectLiteralComputedProperties": true,
+    "objectLiteralShorthandMethods": true,
+    "objectLiteralShorthandProperties": true,
+    "spread": true,
+    "templateStrings": true,
+    "binaryLiterals": true,
+    "forOf": true,
+    "modules": true,
+    "octalLiterals": true,
+    "regexUFlag": true,
+    "regexYFlag": true,
+    "restParams": true,
+    "superInFunctions": true,
+    "templateStrings": true,
+    "unicodeCodePointEscapes": true
+  },
+  "plugins": [
+    "react",
+    "babel"
+  ],
+  "globals": {
+  }
+}

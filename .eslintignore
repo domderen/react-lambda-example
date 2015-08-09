@@ -1,0 +1,4 @@
+public/bundle
+src/bundles
+dist
+node_modules

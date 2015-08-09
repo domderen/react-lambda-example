@@ -4,3 +4,4 @@ npm-debug.log
 coverage
 public/bundle
 src/bundles/webpack-stats.json
+testinglambda.js

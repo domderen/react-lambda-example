@@ -3,7 +3,8 @@
     node:
       version: "iojs-v3.0.0"
     environment:
-      BUCKET_NAME: react-lambda-example/versions
+      LAMBDA_BUCKET_NAME: react-lambda-example/lambda_versions
+      STATIC_BUCKET_NAME: react-lambda-example/static_versions
       AWS_REGION: us-east-1
   test:
     override:
@@ -19,6 +20,8 @@
           npm run zip
         -
           npm run deploy
+        -
+          npm run deploy-static
         -
           git config --global user.email 'circleci@import.io'
         -

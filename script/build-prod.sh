@@ -6,12 +6,16 @@ ulimit -n 10240
 
 # Cleans dist directory.
 rm -rf dist
+rm -rf dist_static
 # Runs webpack with production configuration.
 ANIMATIONS_DISABLED=$ANIMATIONS_DISABLED node_modules/.bin/webpack --stats --progress --config ./webpack/prod.config.js
 
 mkdir dist
+mkdir dist_static
+
 cp -R public/* dist
 cp -R lambda/* dist
 cp -R src dist
 cp -R server dist
 cp -R node_modules dist
+cp -R public/* dist_static

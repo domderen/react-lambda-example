@@ -11,7 +11,8 @@
     "serve": "./node_modules/.bin/serve -p 9000 dist",
     "coverage": "babel-node node_modules/.bin/isparta cover --report html node_modules/.bin/_mocha",
     "zip": "cd dist && zip -r ../$CIRCLE_BUILD_NUM.zip *",
-    "deploy": "s3-deploy './*.zip' --cwd './' --region $AWS_REGION --bucket $BUCKET_NAME",
+    "deploy": "s3-deploy './*.zip' --cwd './' --region $AWS_REGION --bucket $LAMBDA_BUCKET_NAME",
+    "deploy-static": "s3-deploy './dist_static/**' --cwd './dist_static/' --region $AWS_REGION --bucket $STATIC_BUCKET_NAME/$CIRCLE_BUILD_NUM",
     "test-circle": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/file.xml mocha test --reporter mocha-junit-reporter"
   },
   "repository": {

@@ -49,7 +49,7 @@ class HtmlDocument extends React.Component {
           <title>React-Lambda-Example</title>
 
           { /* Listing all css files from webpack. */ }
-          { css.map((href, k) => <link key={k} rel="stylesheet" href={href} />) }
+          { css.map((href, k) => <link key={k} rel="stylesheet" href={href.substring(1)} />) }
         </head>
 
         <body>
@@ -60,7 +60,7 @@ class HtmlDocument extends React.Component {
           <script dangerouslySetInnerHTML={{ __html: 'window.app=' + JSON.stringify(this.props.dataRender) + ';' }} />
 
           { /* Adds all scripts from webpack. */ }
-          { script.map((src, k) => <script key={k} src={src} />) }
+          { script.map((src, k) => <script key={k} src={src.substring(1)} />) }
         </body>
       </html>
     );

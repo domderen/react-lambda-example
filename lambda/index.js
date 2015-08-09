@@ -49,14 +49,13 @@ exports.handler = function(event, context) {
       render.render(fullPath).then(function (arr) {
         var urlPath = arr[0];
         var renderedContent = arr[1];
-        context.succeed({path: path, querystring: querystring, fullPath: fullPath, error: error, renderedContent: renderedContent});
+        context.succeed(renderedContent);
       }).catch(function (error) {
         console.log('ERROR WHILE RENDERING: ', e);
+        context.succeed({error: error});
       });
   } catch (e) {
       error = e;
       console.log('ERROR: ', e);
   }
-
-
 };

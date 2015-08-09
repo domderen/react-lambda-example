@@ -1,6 +1,8 @@
 console.log('Loading function');
 
-require('babel/register');
+require('babel/register')({
+  optional: ["es7.classProperties"]
+});
 var render = require('./server/render');
 
 function JSONize(str) {

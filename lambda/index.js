@@ -49,7 +49,7 @@ exports.handler = function(event, context) {
       render.render(fullPath).then(function (arr) {
         var urlPath = arr[0];
         var renderedContent = arr[1];
-        context.succeed(renderedContent);
+        context.succeed({variableHTML: renderedContent});
       }).catch(function (error) {
         console.log('ERROR WHILE RENDERING: ', e);
         context.succeed({error: error});

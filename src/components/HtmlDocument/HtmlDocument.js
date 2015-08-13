@@ -37,6 +37,18 @@ class HtmlDocument extends React.Component {
   }
 
   render() {
+    const awsHost = (process.env.AWS_STATIC_DOMAIN || '');
+    const buildNumber = (process.env.CIRCLE_BUILD_NUM || '');
+    let domainUrl = '';
+
+    if(awsHost && buildNumber) {
+      domainUrl = `${awsHost}/${buildNumber}/`;
+    }
+
+    console.log('AWS HOST: ', awsHost);
+    console.log('BUILD NUMBER: ', buildNumber);
+    console.log('DOMAIN URL: ', buildNumber);
+    
     const { markup, script, css } = this.props;
 
     return (
@@ -49,7 +61,7 @@ class HtmlDocument extends React.Component {
           <title>React-Lambda-Example</title>
 
           { /* Listing all css files from webpack. */ }
-          { css.map((href, k) => <link key={k} rel="stylesheet" href={href.substring(1)} />) }
+          { css.map((href, k) => <link key={k} rel="stylesheet" href={domainUrl + href} />) }
         </head>
 
         <body>
@@ -60,7 +72,7 @@ class HtmlDocument extends React.Component {
           <script dangerouslySetInnerHTML={{ __html: 'window.app=' + JSON.stringify(this.props.dataRender) + ';' }} />
 
           { /* Adds all scripts from webpack. */ }
-          { script.map((src, k) => <script key={k} src={src.substring(1)} />) }
+          { script.map((src, k) => <script key={k} src={domainUrl + src} />) }
         </body>
       </html>
     );

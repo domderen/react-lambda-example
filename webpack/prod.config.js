@@ -40,7 +40,7 @@ module.exports = {
     chunkFilename: '[name]-[hash].js',
     // The output.path from the view of the Javascript / HTML page.
     // http://webpack.github.io/docs/configuration.html#output-publicpath
-    publicPath: '/bundle/',
+    publicPath: staticDomainOpts.domainUrl + '/bundle/',
   },
   // Options affecting the normal modules (NormalModuleFactory). http://webpack.github.io/docs/configuration.html#module
   module: {

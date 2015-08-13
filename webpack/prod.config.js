@@ -11,6 +11,15 @@ const writeStats = require('./utils/write-stats');
 
 const assetsPath = path.join(__dirname, '../public/bundle');
 
+const staticDomainOpts = {
+  awsHost: (process.env.AWS_STATIC_DOMAIN || ''),
+  buildNumber: (process.env.CIRCLE_BUILD_NUM || ''),
+};
+
+if(staticDomainOpts.awsHost && staticDomainOpts.buildNumber) {
+  staticDomainOpts.domainUrl = staticDomainOpts.awsHost + staticDomainOpts.buildNumber;
+}
+
 module.exports = {
   // Choose a developer tool to enhance debugging. http://webpack.github.io/docs/configuration.html#devtool
   devtool: 'source-map',

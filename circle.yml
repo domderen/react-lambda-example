@@ -32,4 +32,4 @@
         -
           ./tag.sh
         -
-          aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --s3-bucket $S3_BUCKET --s3-key lambda_versions/$CIRCLE_BUILD_NUM.zip --region $AWS_REGION
+          npm run deploy-lambda

@@ -13,7 +13,8 @@
     "zip": "cd dist && zip -r ../$CIRCLE_BUILD_NUM.zip *",
     "deploy": "s3-deploy './*.zip' --cwd './' --region $AWS_REGION --bucket $LAMBDA_BUCKET_NAME",
     "deploy-static": "s3-deploy './dist_static/**' --cwd './dist_static/' --region $AWS_REGION --bucket $STATIC_BUCKET_NAME/$CIRCLE_BUILD_NUM",
-    "test-circle": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/file.xml mocha test --reporter mocha-junit-reporter"
+    "test-circle": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/file.xml mocha test --reporter mocha-junit-reporter",
+    "deploy-lambda": "aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --s3-bucket $S3_BUCKET --s3-key lambda_versions/$CIRCLE_BUILD_NUM.zip --region $AWS_REGION"
   },
   "repository": {
     "type": "git",

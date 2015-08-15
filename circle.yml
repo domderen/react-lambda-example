@@ -3,9 +3,11 @@
     node:
       version: "iojs-v3.0.0"
     environment:
+      S3_BUCKET: react-lambda-example
+      AWS_REGION: us-east-1
+      LAMBDA_FUNCTION_NAME: testFunction
       LAMBDA_BUCKET_NAME: react-lambda-example/lambda_versions
       STATIC_BUCKET_NAME: react-lambda-example/static_versions
-      AWS_REGION: us-east-1
       AWS_STATIC_DOMAIN: //d14uoqs6f7f5cn.cloudfront.net/static_versions/
   test:
     override:
@@ -29,3 +31,5 @@
           git config --global user.name 'Circle CI'
         -
           ./tag.sh
+        -
+          aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --s3-bucket $S3_BUCKET --s3-key lambda_versions/$CIRCLE_BUILD_NUM.zip --region $AWS_REGION

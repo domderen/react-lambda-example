@@ -9,10 +9,6 @@
       LAMBDA_BUCKET_NAME: react-lambda-example/lambda_versions
       STATIC_BUCKET_NAME: react-lambda-example/static_versions
       AWS_STATIC_DOMAIN: //d14uoqs6f7f5cn.cloudfront.net/static_versions/
-  dependencies:
-    pre:
-      -
-        pip install awscli
   test:
     override:
       -

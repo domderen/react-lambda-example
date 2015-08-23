@@ -14,6 +14,7 @@ const assetsPath = path.join(__dirname, '../public/bundle');
 const staticDomainOpts = {
   awsHost: (process.env.AWS_STATIC_DOMAIN || ''),
   buildNumber: (process.env.CIRCLE_BUILD_NUM || ''),
+  domainUrl: '',
 };
 
 if(staticDomainOpts.awsHost && staticDomainOpts.buildNumber) {

@@ -3,5 +3,4 @@ src/bundles
 dist
 dist_static
 node_modules
-lambda
 testinglambda.js

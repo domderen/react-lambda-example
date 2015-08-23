@@ -12,8 +12,6 @@
   test:
     override:
       -
-        npm run test-circle
-      -
         npm run release
   deployment:
     staging:

@@ -32,7 +32,7 @@
     "react/jsx-boolean-value": 2,
     "react/jsx-no-duplicate-props": [2, { "ignoreCase": false }],
     "react/jsx-no-undef": 2,
-    "react/jsx-quotes": [1, "double", "avoid-escape"],
+    "react/jsx-quotes": 0,
     "react/jsx-sort-prop-types": 0,
     "react/jsx-sort-props": 0,
     "react/jsx-uses-react": 2,

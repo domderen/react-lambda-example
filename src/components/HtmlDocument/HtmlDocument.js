@@ -46,7 +46,7 @@ class HtmlDocument extends React.Component {
           <meta name="viewport" content="width=device-width" />
 
           { /* Page title. */ }
-          <title>React-Lambda-Example</title>
+          <title>Lemod</title>
 
           { /* Listing all css files from webpack. */ }
           { css.map((href, k) => <link key={k} rel="stylesheet" href={href} />) }

@@ -1,6 +1,8 @@
 react-lambda-example
 ====================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/domderen/react-lambda-example.svg)](https://greenkeeper.io/)
+
 Frontend application built with [React](https://facebook.github.io/react/) + [Webpack](webpack.github.io) + [BabelJS](https://babeljs.io) + [Less](http://lesscss.org/) + [Mocha](mochajs.org).
 
 This project serves as a proof of concept of creating a React application, utilizing server side rendering capabilities, which is hosted on Amazon Lambda, and exposed to world utilizing Amazon API Gateway.
